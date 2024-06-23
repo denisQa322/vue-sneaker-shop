@@ -17,7 +17,7 @@ defineProps({
     <img
       :src="!isFavorite ? '/like-1.svg' : '/like-2.svg'"
       alt="Like 1"
-      class="absolute top-8 left-8"
+      class="absolute top-8 left-8 cursor-pointer"
       @click="onClickFavorite"
     />
     <img :src="imageUrl" alt="Sneaker" />
@@ -28,8 +28,12 @@ defineProps({
         <span class="text-slate-400">Цена:</span>
         <b>{{ price }} руб.</b>
       </div>
-
-      <img @click="onClickAdd" :src="!isAdded ? '/plus.svg' : '/checked.svg'" alt="Plus" />
+      <img
+        class="cursor-pointer"
+        @click="onClickAdd"
+        :src="!isAdded ? '/plus.svg' : '/checked.svg'"
+        alt="Plus"
+      />
     </div>
   </div>
 </template>
